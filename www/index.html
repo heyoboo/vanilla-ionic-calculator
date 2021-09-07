@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="light" />
+
     <title>Document</title>
 
     <script type="module" src="node_modules/@ionic/core/dist/ionic/ionic.esm.js"></script>
@@ -14,7 +17,50 @@
 
 <body>
     <ion-app>
-        <h1>test test test test </h1>
+        <ion-split-pane when="sm" content-id="main-content">
+            <ion-menu content-id="main-content">
+                <ion-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Menu</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+
+                <ion-content>
+                    <ion-list>
+                        <ion-list-header>
+                            Navigate
+                        </ion-list-header>
+                        <ion-menu-toggle auto-hide="false">
+                            <ion-item button>
+                                <ion-icon slot="start" name='home'></ion-icon>
+                                <ion-label>
+                                    Home
+                                </ion-label>
+                            </ion-item>
+                        </ion-menu-toggle>
+                    </ion-list>
+                </ion-content>
+            </ion-menu>
+
+            <div class="ion-page" id="main-content">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-buttons slot="start">
+                            <ion-menu-toggle>
+                                <ion-button>
+                                    <ion-icon slot="icon-only" name="menu"></ion-icon>
+                                </ion-button>
+                            </ion-menu-toggle>
+                        </ion-buttons>
+                        <ion-title>Header</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content class="ion-padding">
+                    <h1>Main Content</h1>
+                </ion-content>
+            </div>
+
+        </ion-split-pane>
     </ion-app>
 </body>
 
