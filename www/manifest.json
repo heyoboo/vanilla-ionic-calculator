@@ -1,0 +1,24 @@
+{
+    "name": "bz",
+    "short_name": "bz",
+    "start_url": ".",
+    "orientation": "portrait",
+    "display": "standalone",
+    "theme_color": "#FF1717",
+    "background_color": "#fff",
+    "description": "an app.",
+    "icons": [ {
+      "src": "../img/logo-placeholder.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "../img/logo-placeholder.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }],
+    "related_applications": [{
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+    }]
+  }

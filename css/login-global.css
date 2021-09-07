@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", "Roboto Condensed", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.login-logo {
+  width: 25vh;
+  height: 25vh;
+  background: url(../img/logo-placeholder.png);
+  background-size: contain;
+}
+
+@media only screen and (max-height: 568px) {
+  .login-logo {
+    width: 150px;
+    height: 150px;
+  }
+}
+/*# sourceMappingURL=login-global.css.map */
