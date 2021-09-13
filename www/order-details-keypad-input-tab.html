@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+  <title>bz</title>
+
+  <link rel="manifest" href="./manifest.json">
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/login-global.css">
+  <link rel="stylesheet" href="./css/order-details-keypad-input.css" />
+</head>
+
+<body>
+
+  <ion-page>
+    <ion-tabs>
+      <ion-tab tab="movies">
+        <ion-header translucent>
+          <ion-toolbar>
+            <ion-title>Movies</ion-title>
+          </ion-toolbar>
+        </ion-header>
+
+        <ion-content fullscreen class="ion-padding">
+          <h1>Movies</h1>
+        </ion-content>
+      </ion-tab>
+
+
+      <ion-tab tab="music">
+        <ion-header translucent>
+          <ion-toolbar>
+            <ion-title>music</ion-title>
+          </ion-toolbar>
+        </ion-header>
+
+        <ion-content fullscreen class="ion-padding">
+          <h1>music</h1>
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab tab="games">
+
+        <ion-content>
+          <div class="app-wrapper">
+
+            <div class="main">
+              <div class="desc-wrapper">
+                <div class="pic"></div>
+
+                <div class="desc-block">
+                  <div class="desc-top">
+                    <label for="description">
+                      <input type="text" class="description" name="description" maxlength=50" />
+                      <span class="desc-txt">Add Description</span>
+                    </label>
+                  </div>
+
+                  <div class="desc-price desc-inner-position" id="price" tabindex="0">1,000,000.00</div>
+                  <div class="desc-price-input desc-inner-position" id="price" tabindex="0">1 &#43; 2 &#43; 3 &#215; 2
+                  </div>
+                </div>
+              </div>
+
+              <div class="keypad">
+                <div class="calculator-keys">
+                  <button value="7" id="key-btn">7</button>
+                  <button value="8" id="key-btn">8</button>
+                  <button value="9" id="key-btn">9</button>
+                  <!-- division -->
+                  <button value="/" class="operator" id="key-btn">&#247;</button>
+                  <button value="4" id="key-btn">4</button>
+                  <button value="5" id="key-btn">5</button>
+                  <button value="6" id="key-btn">6</button>
+                  <!-- multiply -->
+                  <button value="*" class="operator" id="key-btn">&#215;</button>
+                  <button value="1" id="key-btn">1</button>
+                  <button value="2" id="key-btn">2</button>
+                  <button value="3" id="key-btn">3</button>
+                  <!-- minus -->
+                  <button value="-" class="operator" id="key-btn">&#8722;</button>
+                  <!-- backspace -->
+                  <button value="back" class="back" id="key-btn">&#60;</button>
+                  <button value="0" id="key-btn">0</button>
+                  <!-- dot -->
+                  <button value="." class="decimal" id="key-btn">&#46;</button>
+                  <!-- plus -->
+                  <button value="+" class="operator" id="key-btn">&#43;</button>
+                  <!-- reset -->
+                  <button value="reset" class="operator" id="key-btn">AC</button>
+                  <!-- persent -->
+                  <!-- <button value="persent" class="operator" id="key-btn">%</button> -->
+                  <!-- parentheses -->
+                  <!-- <button value="parentheses" class="operator" id="key-btn">&#40;&#41;</button> -->
+                  <!-- equal -->
+                  <!-- <button value="equal" class="operator" id="key-btn">=</button> -->
+                </div>
+              </div>
+
+              <button class="next">Next</button>
+            </div>
+          </div>
+
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="music">
+          <ion-label>Music</ion-label>
+          <ion-icon name="musical-note"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="movies">
+          <ion-label>Movies</ion-label>
+          <ion-icon name="videocam"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="games">
+          <ion-label>Games</ion-label>
+          <ion-icon name="game-controller"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+    </div>
+
+
+  </ion-page>
+
+
+
+  <script src="./js/keypad.js"></script>
+
+  <script>
+    var descInput = document.querySelector(".description");
+    var descHint = document.querySelector(".desc-txt");
+
+    var priceEl = document.querySelector("#price");
+    var priceLen;
+    var price = [];
+    var prevPrice;
+    var newPrice;
+
+    var keyBtn = document.querySelectorAll("#key-btn");
+
+    var result = 0;
+
+
+    keyBtn.forEach(e => {
+
+      var focus = false;
+
+      e.addEventListener('mousedown', () => {
+        setTimeout(function () {
+          // You are now in a hold state, you can do whatever you like!
+          console.log('pressing');
+          e.style.borderRadius = '50px';
+          e.style.background = 'rgba(240, 240, 240)';
+        }, 0);
+      })
+
+
+      // -- Add animation to each button -- //
+      e.addEventListener('mouseup', () => {
+        var radius = 50;
+        var color = 240;
+        var timer;
+
+        timer = setInterval(() => {
+          color += 3 / 10;
+          radius--;
+
+          e.style.borderRadius = `${radius}px`;
+          e.style.background = `rgba(${color}, ${color}, ${color}, 1)`;
+
+          if (radius == 0) {
+            clearInterval(timer);
+          }
+        }, 6);
+      })
+
+    });
+
+
+
+
+    // -- Description field toggle -- //
+    if (descInput) {
+      descInput.addEventListener('focus', () => {
+        descHint.style.display = "none";
+      })
+
+      descInput.addEventListener('blur', () => {
+        if (descInput.value == "" || descInput.value == null) {
+          descHint.style.display = "block";
+        }
+        else {
+          descHint.style.display = "none";
+        }
+      })
+    }
+
+
+  </script>
+</body>
+
+</html>

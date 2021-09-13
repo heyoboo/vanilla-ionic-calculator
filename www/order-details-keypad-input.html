@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/login-global.css">
-  <link rel="stylesheet" href="./css/order-details-keypad.css" />
+  <link rel="stylesheet" href="./css/order-details-keypad-input.css" />
 </head>
 
 <body>
@@ -65,7 +65,7 @@
             </ion-menu-toggle>
           </ion-buttons>
 
-          
+
           <nav>
             <div class="title">Order Details</div>
           </nav>
@@ -82,7 +82,9 @@
                   </label>
                 </div>
 
-                <div class="desc-price desc-inner-position" id="price" tabindex="0">1,000,000.00</div>
+                <div class="desc-price desc-inner-position" id="price">9</div>
+                <div class="desc-price-input desc-inner-position" id="price" tabindex="0">1 &#43; 2 &#43; 3 &#215; 2
+                </div>
               </div>
             </div>
 
@@ -110,14 +112,6 @@
                 <button value="." class="decimal" id="key-btn">&#46;</button>
                 <!-- plus -->
                 <button value="+" class="operator" id="key-btn">&#43;</button>
-                <!-- reset -->
-                <button value="reset" class="operator" id="key-btn">AC</button>
-                <!-- persent -->
-                <!-- <button value="persent" class="operator" id="key-btn">%</button> -->
-                <!-- parentheses -->
-                <!-- <button value="parentheses" class="operator" id="key-btn">&#40;&#41;</button> -->
-                <!-- equal -->
-                <!-- <button value="equal" class="operator" id="key-btn">=</button> -->
               </div>
             </div>
 
@@ -126,9 +120,6 @@
           <div class="tab"></div>
         </div>
     </ion-content>
-    </div>
-
-
   </ion-page>
 
 
@@ -151,13 +142,26 @@
 
 
     keyBtn.forEach(e => {
-      // -- Add animation to each button -- //
+
+      var focus = false;
+
       e.addEventListener('mousedown', () => {
+        setTimeout(function () {
+          // You are now in a hold state, you can do whatever you like!
+          console.log('pressing');
+          e.style.borderRadius = '50px';
+          e.style.background = 'rgba(240, 240, 240)';
+        }, 0);
+      })
+
+
+      // -- Add animation to each button -- //
+      e.addEventListener('mouseup', () => {
         var radius = 50;
         var color = 240;
         var timer;
 
-        function keyAnim() {
+        timer = setInterval(() => {
           color += 3 / 10;
           radius--;
 
@@ -167,9 +171,7 @@
           if (radius == 0) {
             clearInterval(timer);
           }
-        }
-
-        timer = setInterval(keyAnim, 6);
+        }, 6);
       })
 
     });

@@ -8,12 +8,12 @@
     "background_color": "#fff",
     "description": "an app.",
     "icons": [ {
-      "src": "../img/logo-placeholder.png",
+      "src": "./img/logo-placeholder.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "../img/logo-placeholder.png",
+      "src": "./img/logo-placeholder.png",
       "sizes": "144x144",
       "type": "image/png"
     }],

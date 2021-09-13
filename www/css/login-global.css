@@ -10,7 +10,7 @@ html {
   height: 100%;
 }
 
-body {
+body, input, textarea, button {
   font-family: "Roboto", "Roboto Condensed", sans-serif;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -25,7 +25,7 @@ a {
 .login-logo {
   width: 25vh;
   height: 25vh;
-  background: url(../img/logo-placeholder.png);
+  background: url(../img/logo-black.png);
   background-size: contain;
 }
 

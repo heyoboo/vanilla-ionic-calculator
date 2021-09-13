@@ -1,0 +1,112 @@
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px 0;
+    max-width: 250px;
+    height: 100%;
+}
+
+.face-id {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    border-radius: 8px;
+    background: #E5E5EAB2;
+    padding: 25px;
+    transition: .1s;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        background: #E5E5EA;
+    }
+}
+
+.face-id-icon {
+    width: 65%;
+    height: 65%;
+    background: url(../img/face-id.svg);
+    background-size: cover;
+}
+
+.face-animation {
+    animation-name: face;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes face {
+    100% {
+        transform: rotate3d(0, 1, 0, -90deg);
+        visibility: hidden;
+    }
+}
+
+.check-mark {
+    width: 65%;
+    height: 65%;
+    background: url(../img/check-mark.svg);
+    background-size: cover;
+    animation-name: check;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes check {
+    0% {
+        visibility: hidden;
+        transform: rotate3d(0, 1, 0, -90deg);
+    }
+
+    100% {
+        visibility: visible;
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+}
+
+.face-id-txt {
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    color: #65666A;
+}
+
+.login-alt {
+    text-decoration: none;
+    font-size: 14px;
+    color: #596273;
+    transition: .1s;
+
+    &:hover {
+        cursor: pointer;
+        color: #FF1717B2;
+    }
+
+    &:active {
+        transform: scale(1.05);
+    }
+}
+
+@media only screen and (max-height: 568px) {
+    .login-wrapper {
+        padding: 20px 0;
+    }
+
+    .face-id {
+        width: 150px;
+        height: 150px;
+        transform: translateY(20%);
+    }
+}
