@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ion-app>
+        <ion-router>
+            <ion-route url="/" component="page-one"></ion-route>
+            <ion-route url="/two" component="page-two"></ion-route>
+        </ion-router>
+    </ion-app>
+
+
+    <script>
+
+        customElements.define('page-one', class extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Main page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>This is main page<h1>
+  <ion-button href="#/two">Go to page two</ion-button>
+</ion-content>
+`;
+            }
+        });
+
+        customElements.define('page-two', class extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-button>
+    <ion-title>Page two</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>This is the second page<h1>
+</ion-content>
+`;
+            }
+        });
+    </script>
+</body>
+
+</html>
