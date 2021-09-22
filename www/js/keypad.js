@@ -30,11 +30,6 @@ function inputDigit(digit) {
 
         calculator.displayValue = digit;
 
-        if (digit || operator) {
-            console.log(calculator.secondInput, calculator.operator);
-        }
-        countTime(0, 1);
-
 
         /*
         time = 0
@@ -50,16 +45,14 @@ function inputDigit(digit) {
         */
 
 
-        /* 
-        **Calculates when presses a number. Returns to first operand and not wait for second operand**
-        // const result = calculate(calculator.firstOperand, parseFloat(digit), operator
-        // );
+        //**Calculates when presses a number. Returns to first operand and not wait for second operand**
+        const result = calculate(calculator.firstOperand, parseFloat(digit), operator
+        );
 
-        // calculator.displayValue = `${parseFloat(result.toFixed(2))}`;
-        // calculator.firstOperand = result;
+        calculator.displayValue = `${parseFloat(result.toFixed(2))}`;
+        calculator.firstOperand = result;
 
-        // calculator.waitingForSecondOperand = false;
-        */
+        calculator.waitingForSecondOperand = false;
     } else {
         calculator.displayValue =
             displayValue === "0" ? digit : displayValue + digit;
