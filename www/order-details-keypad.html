@@ -29,106 +29,104 @@
 
 <body>
 
-  <ion-page>
 
-    <ion-content>
-      <div class="app-wrapper">
-        <ion-menu content-id="main-content">
-          <ion-header>
-            <ion-toolbar color="primary">
-              <ion-title>Menu</ion-title>
-            </ion-toolbar>
-          </ion-header>
+  <ion-content>
+    <div class="app-wrapper">
+      <ion-menu content-id="main-content">
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
 
-          <ion-content>
-            <ion-list>
-              <ion-list-header>
-                Navigate
-              </ion-list-header>
-              <ion-menu-toggle auto-hide="false">
-                <ion-item button>
-                  <ion-icon slot="start" name='home'></ion-icon>
-                  <ion-label>
-                    Home
-                  </ion-label>
-                </ion-item>
-              </ion-menu-toggle>
-            </ion-list>
-          </ion-content>
-        </ion-menu>
-        <div class="ion-page" id="main-content">
-          <ion-buttons slot="start">
-            <ion-menu-toggle>
-              <ion-button>
-                <ion-icon slot="icon-only" name="menu"></ion-icon>
-              </ion-button>
+        <ion-content>
+          <ion-list>
+            <ion-list-header>
+              Navigate
+            </ion-list-header>
+            <ion-menu-toggle auto-hide="false">
+              <ion-item button>
+                <ion-icon slot="start" name='home'></ion-icon>
+                <ion-label>
+                  Home
+                </ion-label>
+              </ion-item>
             </ion-menu-toggle>
-          </ion-buttons>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      <div class="ion-page" id="main-content">
+        <ion-buttons slot="start">
+          <ion-menu-toggle>
+            <ion-button>
+              <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button>
+          </ion-menu-toggle>
+        </ion-buttons>
 
-          
-          <nav>
-            <div class="title">Order Details</div>
-          </nav>
 
-          <div class="main">
-            <div class="desc-wrapper">
-              <div class="pic"></div>
+        <nav>
+          <div class="title">Order Details</div>
+        </nav>
 
-              <div class="desc-block">
-                <div class="desc-top">
-                  <label for="description">
-                    <input type="text" class="description" name="description" maxlength=50" />
-                    <span class="desc-txt">Add Description</span>
-                  </label>
-                </div>
+        <div class="main">
+          <div class="desc-wrapper">
+            <div class="pic"></div>
 
-                <div class="desc-price desc-inner-position" id="price" tabindex="0">1,000,000.00</div>
+            <div class="desc-block">
+              <div class="desc-top">
+                <label for="description">
+                  <input type="text" class="description" name="description" maxlength=50" />
+                  <span class="desc-txt">Add Description</span>
+                </label>
               </div>
-            </div>
 
-            <div class="keypad">
-              <div class="calculator-keys">
-                <button value="7" id="key-btn">7</button>
-                <button value="8" id="key-btn">8</button>
-                <button value="9" id="key-btn">9</button>
-                <!-- division -->
-                <button value="/" class="operator" id="key-btn">&#247;</button>
-                <button value="4" id="key-btn">4</button>
-                <button value="5" id="key-btn">5</button>
-                <button value="6" id="key-btn">6</button>
-                <!-- multiply -->
-                <button value="*" class="operator" id="key-btn">&#215;</button>
-                <button value="1" id="key-btn">1</button>
-                <button value="2" id="key-btn">2</button>
-                <button value="3" id="key-btn">3</button>
-                <!-- minus -->
-                <button value="-" class="operator" id="key-btn">&#8722;</button>
-                <!-- backspace -->
-                <button value="back" class="back" id="key-btn">&#60;</button>
-                <button value="0" id="key-btn">0</button>
-                <!-- dot -->
-                <button value="." class="decimal" id="key-btn">&#46;</button>
-                <!-- plus -->
-                <button value="+" class="operator" id="key-btn">&#43;</button>
-                <!-- reset -->
-                <!-- persent -->
-                <!-- <button value="persent" class="operator" id="key-btn">%</button> -->
-                <!-- parentheses -->
-                <!-- <button value="parentheses" class="operator" id="key-btn">&#40;&#41;</button> -->
-                <!-- equal -->
-                <!-- <button value="equal" class="operator" id="key-btn">=</button> -->
-              </div>
+              <div class="desc-price desc-inner-position" id="price" tabindex="0">1,000,000.00</div>
             </div>
-
-            <button class="next">Next</button>
           </div>
-          <div class="tab"></div>
+
+          <div class="keypad">
+            <div class="calculator-keys">
+              <button value="7" id="key-btn">7</button>
+              <button value="8" id="key-btn">8</button>
+              <button value="9" id="key-btn">9</button>
+              <!-- division -->
+              <button value="/" class="operator" id="key-btn">&#247;</button>
+              <button value="4" id="key-btn">4</button>
+              <button value="5" id="key-btn">5</button>
+              <button value="6" id="key-btn">6</button>
+              <!-- multiply -->
+              <button value="*" class="operator" id="key-btn">&#215;</button>
+              <button value="1" id="key-btn">1</button>
+              <button value="2" id="key-btn">2</button>
+              <button value="3" id="key-btn">3</button>
+              <!-- minus -->
+              <button value="-" class="operator" id="key-btn">&#8722;</button>
+              <!-- backspace -->
+              <button value="back" class="back" id="key-btn">&#60;</button>
+              <button value="0" id="key-btn">0</button>
+              <!-- dot -->
+              <button value="." class="decimal" id="key-btn">&#46;</button>
+              <!-- plus -->
+              <button value="+" class="operator" id="key-btn">&#43;</button>
+              <!-- reset -->
+              <!-- persent -->
+              <!-- <button value="persent" class="operator" id="key-btn">%</button> -->
+              <!-- parentheses -->
+              <!-- <button value="parentheses" class="operator" id="key-btn">&#40;&#41;</button> -->
+              <!-- equal -->
+              <!-- <button value="equal" class="operator" id="key-btn">=</button> -->
+            </div>
+          </div>
+
+          <button class="next">Next</button>
         </div>
-    </ion-content>
-    </div>
+        <div class="tab"></div>
+      </div>
+  </ion-content>
+  </div>
 
 
-  </ion-page>
 
 
 
